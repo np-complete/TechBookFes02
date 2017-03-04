@@ -1,1 +1,3 @@
-- [babelとはなにか](what-is-babel.md)
+- [Babelとはなにか](what-is-babel.md)
+- [Babelを使ってみよう](use-babel.md)
+- [プロジェクトの中のBabel](babel-in-project.md)
