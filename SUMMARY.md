@@ -1,3 +1,4 @@
 - [Babelとはなにか](what-is-babel.md)
 - [Babelを使ってみよう](use-babel.md)
 - [プロジェクトの中のBabel](babel-in-project.md)
+- [探検 バベルの塔](explore-babel.md)
