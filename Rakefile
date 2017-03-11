@@ -37,7 +37,7 @@ def convert_summary
   File.write(CATALOG_FILE, YAML.dump(catalog))
 end
 
-task :default => :html_all
+task :default => :pdf
 
 desc "build html (Usage: rake build re=target.re)"
 task :html do
@@ -76,7 +76,7 @@ SRC = FileList['*.md'] + %w(SUMMARY.md)
 OBJ = SRC.ext('re') + [CATALOG_FILE]
 INPUT = OBJ + [CONFIG_FILE, COVER]
 
-ruke '.re' => '.md' do |t|
+rule '.re' => '.md' do |t|
   sh "bundle exec md2review --render-link-in-footnote #{t.source} > #{t.name}"
 end
 
@@ -99,4 +99,4 @@ file WEBROOT => INPUT do
   sh "review-webmaker #{CONFIG_FILE}"
 end
 
-CLEAN.include([BOOK, BOOK_PDF, BOOK_EPUB, BOOK+"-pdf", BOOK+"-epub", WEBROOT])
+CLEAN.include([OBJ, BOOK, BOOK_PDF, BOOK_EPUB, BOOK+"-pdf", BOOK+"-epub", WEBROOT])
