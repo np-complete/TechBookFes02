@@ -63,7 +63,11 @@ es2015に含まれるプラグインのうちいくつか選んで読みます�
 
 ```js
 {
-  visitor: function(path, ...) {}
+  visitor: {
+    foo: function(path, ...) {},
+    bar: function(path, ...) {},
+    ...
+  }
 }
 ```
 
