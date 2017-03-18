@@ -4,3 +4,4 @@
 - [探検 バベルの塔](explore-babel.md)
 - [攻略 プラグイン](explore-plugin.md)
   - [プラグイン作成の準備](setup-plugin-development.md)
+  - [Parser](parser.md)
