@@ -6,7 +6,7 @@ Babelが利用するParserは、[Babylon](https://github.com/babel/babylon)と�
 
 さて、ここで大変残念なお知らせがあります。
 実はこの本の目的のひとつとして、**Parserを拡張して新しい構文を追加する** ことを設定していました。
-しかし、[ソースコード](https://github.com/babel/babylon/tree/7.0/src/parser)を読んでみたところ、構文を変更することは**完全に無理**ということが分かりました。
+しかし、[ソースコード](https://github.com/babel/babylon/tree/6.x/src/parser)を読んでみたところ、構文を変更することは**完全に無理**ということが分かりました。
 
 しかし、世の中にはどう考えてもECMAScriptではない文法を導入しているプラグインがあります。
 型を導入する **flow** やReactの **jsx** などです。
@@ -25,7 +25,7 @@ class Button extends Component {
 なぜこれらのプラグイン[^1]は文法の拡張ができているのでしょうか?
 
 ソースコードを読んで絶望しました。
-これらは、[Babylon本体が提供](https://github.com/babel/babylon/tree/7.0/src/plugins)しているのです。
+これらは、[Babylon本体が提供](https://github.com/babel/babylon/tree/6.x/src/plugins)しているのです。
 ズルい・・・
 
 同じような方法で拡張しようにも、BabylonのParserや文法拡張pluginsを登録する配列は**exportされていない**ので、どうにも手を出せないことが確定しました。
@@ -35,7 +35,7 @@ class Button extends Component {
 ### Parserの動作を読んでみる
 
 Parserはどのようにソースコードをパースしているのでしょうか。
-構文解析といえば、非常に重要な要素として、[式](https://github.com/babel/babylon/blob/7.0/src/parser/expression.js)と[文](https://github.com/babel/babylon/blob/7.0/src/parser/statement.js)があり、それぞれに対応したParserが用意されています。
+構文解析といえば、非常に重要な要素として、[式](https://github.com/babel/babylon/blob/6.x/src/parser/expression.js)と[文](https://github.com/babel/babylon/blob/6.x/src/parser/statement.js)があり、それぞれに対応したParserが用意されています。
 
 どちらも、 `Parser.prototype` (変数 `pp` )に様々なメソッドを登録しています。
 
@@ -85,7 +85,7 @@ const a =  if (true) {
 
 ### Statementを読んでみる
 
-プログラムは文の集合なので、[`parseStatement`](https://github.com/babel/babylon/blob/7.0/src/parser/statement.js#L56)を見てみましょう。
+プログラムは文の集合なので、[`parseStatement`](https://github.com/babel/babylon/blob/6.x/src/parser/statement.js#L56)を見てみましょう。
 名前から、**文**をパースする一番大事なメソッドだと考えられます。
 
 この中では、`switch` 文で `starttype` により処理を分割しています。
@@ -96,7 +96,7 @@ const a =  if (true) {
 
 ### if 文
 
-例えば `if` を処理する [`parseIfStatement`](https://github.com/babel/babylon/blob/7.0/src/parser/statement.js#L283) は、まず `parseParenExpression` を呼び、次に続く(はずの)`( 式 )` をパースし、ifの構文木の `test` というプロパティに設定します。
+例えば `if` を処理する [`parseIfStatement`](https://github.com/babel/babylon/blob/6.x/src/parser/statement.js#L283) は、まず `parseParenExpression` を呼び、次に続く(はずの)`( 式 )` をパースし、ifの構文木の `test` というプロパティに設定します。
 `parseParenExpression` の中では、`this.expect(tt.parenL)` という処理で、次の文字が `(` であることを期待しています。
 もし次に続くものが `(` でない場合、このメソッドが例外を吐くことで、文法の正しさをチェックしています。
 
@@ -138,14 +138,14 @@ const bar = function(a, b) {
 上は**function文**であり、下は**function式**です。
 試しにリポジトリ内を `parseFunction` で検索してみると、`statement.js` には `parseFunctionStatement`、 `expression.js` には `parseFunctionExpression` が見つかります。
 完全に予測可能な結果です。驚き最小の原則に従ってうまく設計されていますね。
-どちらも内部で最終的に [`parseFunction`](https://github.com/babel/babylon/blob/7.0/src/parser/statement.js#L578) を呼んでいます[^4]。
+どちらも内部で最終的に [`parseFunction`](https://github.com/babel/babylon/blob/6.x/src/parser/statement.js#L579) を呼んでいます[^4]。
 `parseFunction` の内部では、いろいろな条件はさくっと無視すると `parseFunctionParams` と `parseFunctionBody` を呼び出していることが分かります。
 
 [^4]: これがstatement.jsにあるのは少し謎
 
 ### 文法拡張プラグインの正体
 
-ここでおもむろに [flow文法プラグイン](https://github.com/babel/babylon/blob/7.0/src/plugins/flow.js)に意識を飛ばしてみましょう。
+ここでおもむろに [flow文法プラグイン](https://github.com/babel/babylon/blob/6.x/src/plugins/flow.js)に意識を飛ばしてみましょう。
 
 先ほどの `parseFunctionParams` や `parseFunctionBody` で検索してみてください。
 `instance.extend` という処理で、それぞれのメソッドがオーバーライドされています。
@@ -162,7 +162,7 @@ flowの文法を**受理**できるように拡張されています。
 Parserさえexportされればできるという感じでもなさそうです。
 ここから先に出てくるコードは、実際には試せていないので**全て妄想**です。
 
-まず、文法に新しいキーワード(ifやfunctionなどの予約語)を追加したい場合、**Tokenizer**に[キーワード登録](https://github.com/babel/babylon/blob/7.0/src/tokenizer/types.js)が必要です。
+まず、文法に新しいキーワード(ifやfunctionなどの予約語)を追加したい場合、**Tokenizer**に[キーワード登録](https://github.com/babel/babylon/blob/6.x/src/tokenizer/types.js)が必要です。
 Tokenizerクラスでは、このキーワード情報をファイルスコープの変数として扱っているので、外部から操作することができません。
 キーワード情報をクラスの内部に変数で持つようになればプラグインから操作可能になるでしょう。
 このキーワード情報は他のファイルからもいくつか参照されており、同様に操作不可能になっています。
@@ -173,7 +173,7 @@ Tokenizerクラスでは、このキーワード情報をファイルスコー�
 次に、実際にパースするところを拡張します。
 文法を拡張する程度ならflowプラグインの実装が参考になるでしょう。
 新しいキーワードを実装するなら、基本的に `parseStatement` や `parseExpression` から攻めていくのが良さそうです。
-ちょうど、[async](https://github.com/babel/babylon/blob/7.0/src/parser/statement.js#L114)がやっているような感じです。
+ちょうど、[async](https://github.com/babel/babylon/blob/6.x/src/parser/statement.js#L114)がやっているような感じです。
 
 ```js
 export default function(instance) {
