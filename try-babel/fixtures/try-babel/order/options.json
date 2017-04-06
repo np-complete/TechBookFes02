@@ -1,0 +1,4 @@
+{
+  "presets": ["a", "b"],
+  "plugins": ["c", "d"]
+}
