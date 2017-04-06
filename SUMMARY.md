@@ -6,3 +6,4 @@
   - [プラグイン作成の準備](setup-plugin-development.md)
   - [Parse](parse.md)
   - [Transform](transform.md)
+- [やってみた](try.md)
