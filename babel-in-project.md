@@ -64,12 +64,7 @@ module.exports = {
 
 これらのオプションを使わない、またはこういうオプションがない場合、
 手動でトランスパイルする必要があります。
-例えばmochaなら、
-
-- `src/*` を `lib/*`
-- `src.test/*` を `test/*`
-
-にトランスパイルし[^3]、
+例えばmochaなら、  `src/*` を `lib/*`,  `src.test/*` を `test/*` にトランスパイルし[^3]、
 
     $ NODE_PATH=./lib mocha ./test/*.test.js
 
