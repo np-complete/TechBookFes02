@@ -17,13 +17,13 @@ review_version: 2.0
 # inherit: ["A.yml", "B.yml"]
 
 # ブック名(ファイル名になるもの。ASCII範囲の文字を使用)
-bookname: ecma-friends
+bookname: babel-friends
 # 記述言語。省略した場合はja
 language: ja
 
 # 書名
 # 読みを入れる例 booktitle: {name: "Re:VIEW EPUBサンプル", file-as: "リビューイーパブサンプル"}
-booktitle: えくまフレンズ 〜 ようこそバベルタワーへ
+booktitle: バベルフレンズ
 
 # 著者名。「, 」で区切って複数指定できる
 # 読みを入れる例 aut: [{name: "青木峰郎", file-as: "アオキミネロウ"}, {name: "武藤健志", file-as: "ムトウケンシ"}, {name: "高橋征義", file-as: "タカハシマサヨシ"}, {name: "角征典", file-as: "カドマサノリ"}]
@@ -48,6 +48,7 @@ aut: ["masarakki"]
 # a-cmm, cmm: 解釈・分析・考察者
 # a-csl, csl: 監修者
 # a-dsr, dsr: デザイナ
+dsr: ["@Omegamega"]
 # a-edt, edt: 編集者
 # a-ill, ill: イラストレータ
 # a-lyr, lyr: 歌詞作成者
@@ -59,6 +60,7 @@ aut: ["masarakki"]
 # a-pbl, pbl: 出版社（発行所）
 pbl: ["NP-complete"]
 # a-prt, prt: 印刷所
+prt: ["栄光印刷"]
 # a-red, red: 項目の枠組起草者
 # a-rev, rev: 評論者
 # a-spn, spn: 援助者
@@ -72,7 +74,7 @@ date: 2017-04-09
 # 複数指定する場合は次のように記述する
 # [["初版第1刷の日付", "初版第2刷の日付"], ["第2版第1刷の日付"]]
 # 日付の後ろを空白文字で区切り、任意の文字列を置くことも可能。
-history: [["2017-04-09"]]
+history: [["2017-04-09"], ["2017-04-29"]]
 # 権利表記(配列で複数指定可)
 # rights: (C) 2016 Re:VIEW Developers
 # description: 説明
@@ -80,6 +82,7 @@ history: [["2017-04-09"]]
 # type: 書籍のカテゴリーなど(配列で複数指定可)
 # format: メディアタイプおよび特徴(配列で複数指定可)
 # source: 出版物生成の重要なリソース情報(配列で複数指定可)
+source: ["https://github.com/np-complete/TechBookFes02"]
 # relation: 補助的リソース(配列で複数指定可)
 # coverage: 内容の範囲や領域(配列で複数指定可)
 
@@ -130,13 +133,14 @@ secnolevel: 2
 # mytoc: true
 
 # 表紙にするHTMLファイル。ファイル名を指定すると表紙として入る
-cover: titlepage.tex
+# cover:
 #
 # 表紙に配置し、書籍の影絵にも利用する画像ファイル。省略した場合はnull (画像を使わない)。画像ディレクトリ内に置いてもディレクトリ名は不要(例: cover.jpg)
-coverimage: logo.png
+coverimage: null
 #
 # 表紙の後に大扉ページを作成するか。省略した場合はnull (作成しない)
 # titlepage: null
+titlepage: null
 #
 # 自動生成される大扉ページを上書きするファイル。ファイル名を指定すると大扉として入る
 # titlefile: null
