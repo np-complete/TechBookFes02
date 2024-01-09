@@ -15,7 +15,7 @@
     "babel-helper-plugin-test-runner": "^6.24.0",
     "mocha": "^10.0.0",
     "npm-run-all": "^4.0.2",
-    "require-self": "^0.1.0"
+    "require-self": "^0.2.0"
   },
   "keywords": [],
   "author": "",
