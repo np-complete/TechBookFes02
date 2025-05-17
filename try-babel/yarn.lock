@@ -859,9 +859,9 @@ debug@^2.2.0, debug@^2.3.3, debug@^2.6.8, debug@^2.6.9:
     ms "2.0.0"
 
 debug@^4.3.5:
-  version "4.4.0"
-  resolved "https://registry.yarnpkg.com/debug/-/debug-4.4.0.tgz#2b3f2aea2ffeb776477460267377dc8710faba8a"
-  integrity sha512-6WTZ/IxCY/T6BALoZHaE4ctp9xm+Z5kY/pzYaCHRFeyVhojxlrm+46y68HA6hr0TcwEssoxNiDEUJQjfPZ/RYA==
+  version "4.4.1"
+  resolved "https://registry.yarnpkg.com/debug/-/debug-4.4.1.tgz#e5a8bc6cbc4c6cd3e64308b0693a3d4fa550189b"
+  integrity sha512-KcKCqiftBJcZr++7ykoDIEwSa3XWowTfNPo92BYxjXiyYEVrUQh2aLyhxBCwww+heortUFxEJYcRzosstTEBYQ==
   dependencies:
     ms "^2.1.3"
 
@@ -1627,9 +1627,9 @@ mkdirp@^0.5.1:
     minimist "^1.2.6"
 
 mocha@^11.0.0:
-  version "11.2.2"
-  resolved "https://registry.yarnpkg.com/mocha/-/mocha-11.2.2.tgz#2dfefc9652de746389f5286888034239b6486231"
-  integrity sha512-VlSBxrPYHK4YNOEbFdkCxHQbZMoNzBkoPprqtZRW6311EUF/DlSxoycE2e/2NtRk4WKkIXzyrXDTrlikJMWgbw==
+  version "11.3.0"
+  resolved "https://registry.yarnpkg.com/mocha/-/mocha-11.3.0.tgz#b2cf42b50fd22a563b4995b386ea901606c97b65"
+  integrity sha512-J0RLIM89xi8y6l77bgbX+03PeBRDQCOVQpnwOcCN7b8hCmbh6JvGI2ZDJ5WMoHz+IaPU+S4lvTd0j51GmBAdgQ==
   dependencies:
     browser-stdout "^1.3.1"
     chokidar "^4.0.1"
