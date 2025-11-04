@@ -7,7 +7,7 @@ jobs:
       - uses: actions/checkout@v5
       - uses: np-complete/build-book-action@v1
       - run: bundle exec rake pdf
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v5
         with:
           name: book
           path: book.pdf
