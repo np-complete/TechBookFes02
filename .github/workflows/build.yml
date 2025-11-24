@@ -4,7 +4,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - uses: np-complete/build-book-action@v1
       - run: bundle exec rake pdf
       - uses: actions/upload-artifact@v5
