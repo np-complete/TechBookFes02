@@ -341,7 +341,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"babel-helper-plugin-test-runner@npm:^6.24.0":
+"babel-helper-plugin-test-runner@npm:6.24.1":
   version: 6.24.1
   resolution: "babel-helper-plugin-test-runner@npm:6.24.1"
   dependencies:
@@ -2160,7 +2160,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mocha@npm:^11.0.0":
+"mocha@npm:11.7.5":
   version: 11.7.5
   resolution: "mocha@npm:11.7.5"
   dependencies:
@@ -2281,7 +2281,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"npm-run-all2@npm:^8.0.0":
+"npm-run-all2@npm:8.0.4":
   version: 8.0.4
   resolution: "npm-run-all2@npm:8.0.4"
   dependencies:
@@ -2695,7 +2695,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"require-self@npm:^0.2.0":
+"require-self@npm:0.2.3":
   version: 0.2.3
   resolution: "require-self@npm:0.2.3"
   bin:
@@ -2723,11 +2723,11 @@ __metadata:
   resolution: "root-workspace-0b6124@workspace:."
   dependencies:
     babel-cli: "npm:^6.24.0"
-    babel-helper-plugin-test-runner: "npm:^6.24.0"
+    babel-helper-plugin-test-runner: "npm:6.24.1"
     babel-preset-es2015: "npm:^6.24.0"
-    mocha: "npm:^11.0.0"
-    npm-run-all2: "npm:^8.0.0"
-    require-self: "npm:^0.2.0"
+    mocha: "npm:11.7.5"
+    npm-run-all2: "npm:8.0.4"
+    require-self: "npm:0.2.3"
   languageName: unknown
   linkType: soft
 
