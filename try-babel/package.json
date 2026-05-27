@@ -10,7 +10,7 @@
   },
   "devDependencies": {
     "babel-helper-plugin-test-runner": "6.24.1",
-    "mocha": "11.7.5",
+    "mocha": "11.7.6",
     "npm-run-all2": "9.0.1",
     "require-self": "0.2.3"
   },
