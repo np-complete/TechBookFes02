@@ -177,7 +177,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"babel-cli@npm:^6.24.0":
+"babel-cli@npm:6.26.0":
   version: 6.26.0
   resolution: "babel-cli@npm:6.26.0"
   dependencies:
@@ -684,7 +684,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"babel-preset-es2015@npm:^6.24.0":
+"babel-preset-es2015@npm:6.24.1":
   version: 6.24.1
   resolution: "babel-preset-es2015@npm:6.24.1"
   dependencies:
@@ -2715,9 +2715,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "root-workspace-0b6124@workspace:."
   dependencies:
-    babel-cli: "npm:^6.24.0"
+    babel-cli: "npm:6.26.0"
     babel-helper-plugin-test-runner: "npm:6.24.1"
-    babel-preset-es2015: "npm:^6.24.0"
+    babel-preset-es2015: "npm:6.24.1"
     mocha: "npm:11.7.6"
     npm-run-all2: "npm:9.0.1"
     require-self: "npm:0.2.3"
