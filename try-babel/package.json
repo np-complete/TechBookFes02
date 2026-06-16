@@ -11,7 +11,7 @@
   "devDependencies": {
     "babel-helper-plugin-test-runner": "6.24.1",
     "mocha": "11.7.6",
-    "npm-run-all2": "9.0.1",
+    "npm-run-all2": "9.0.2",
     "require-self": "0.2.3"
   },
   "packageManager": "yarn@4.16.0"
