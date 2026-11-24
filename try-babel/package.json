@@ -14,5 +14,5 @@
     "npm-run-all2": "9.1.0",
     "require-self": "0.2.3"
   },
-  "packageManager": "yarn@4.18.1"
+  "packageManager": "yarn@4.19.0"
 }
